@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Rocket.Chat</string>
+	<string>TctsyChat</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
@@ -206,7 +206,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.3.0</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
@@ -222,7 +222,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>236</string>
+	<string>1</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -274,6 +274,8 @@
 	<string>NSPhotoLibraryUsageDescription</string>
 	<key>RC_MIN_SERVER_VERSION</key>
 	<string>0.62.0</string>
+	<key>RC_SERVER_URL</key>
+	<string>https://tctsy.chat</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>

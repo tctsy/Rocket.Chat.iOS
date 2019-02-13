@@ -88,6 +88,12 @@ final class WelcomeViewController: BaseViewController {
         return true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        if AppManager.applicationServerURL != nil {
+            performSegue(withIdentifier: "ConnectServer", sender: nil)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAppearance()
@@ -112,6 +118,9 @@ final class WelcomeViewController: BaseViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let connectServer = segue.destination as? ConnectServerViewController, segue.identifier == joinCommunitySegue {
+            connectServer.shouldAutoConnect = true
+        }
+        if let connectServer = segue.destination as? ConnectServerViewController, let _ = AppManager.applicationServerURL {
             connectServer.shouldAutoConnect = true
         }
     }

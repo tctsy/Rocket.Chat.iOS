@@ -87,7 +87,13 @@ final class ConnectServerViewController: BaseViewController {
         super.viewDidLoad()
 
         if shouldAutoConnect {
-            textFieldServerURL.text = "open.rocket.chat"
+            if let applicationServerURL = AppManager.applicationServerURL {
+                textFieldServerURL.isEnabled = false
+                textFieldServerURL.text = applicationServerURL.host
+                connect()
+            } else {
+                textFieldServerURL.text = "open.rocket.chat"
+            }
         }
 
         if !(DatabaseManager.servers?.count ?? 0 > 0) {
@@ -118,11 +124,11 @@ final class ConnectServerViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let applicationServerURL = AppManager.applicationServerURL {
-            textFieldServerURL.isEnabled = false
-            textFieldServerURL.text = applicationServerURL.host
-            connect()
-        }
+//        if let applicationServerURL = AppManager.applicationServerURL {
+//            textFieldServerURL.isEnabled = false
+//            textFieldServerURL.text = applicationServerURL.host
+//            connect()
+//        }
 
         NotificationCenter.default.addObserver(
             self,
