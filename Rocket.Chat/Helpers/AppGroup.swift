@@ -9,5 +9,5 @@
 import Foundation
 
 struct AppGroup {
-    static let identifier = "group.ios.chat.rocket"
+    static let identifier = "group.ios.chat.tctsy"
 }
